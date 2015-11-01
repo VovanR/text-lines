@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Statistics from './StatisticsComponent';
 
 require('styles/Input.css');
 
@@ -17,6 +18,7 @@ class InputComponent extends React.Component {
           defaultValue={this.props.text}
           placeholder="Input"
         />
+        <Statistics text={this.props.text} />
       </div>
     );
   }

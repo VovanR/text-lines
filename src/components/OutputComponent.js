@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {sortBy, uniq} from 'lodash'
+import Statistics from './StatisticsComponent';
 
 require('styles/Output.css');
 
@@ -16,13 +17,15 @@ class OutputComponent extends React.Component {
   }
 
   render() {
+    let text = this._getText();
     return (
       <div className="output-component">
         <textarea
           readOnly
-          value={this._getText()}
+          value={text}
           placeholder="Output"
         />
+        <Statistics text={text} />
       </div>
     );
   }
