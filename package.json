@@ -20,7 +20,8 @@
     "dist": "npm run copy & webpack --env=dist",
     "lint": "eslint ./src",
     "copy": "copyfiles -f ./src/index.html ./src/favicon.ico ./dist",
-    "clean": "rimraf dist/*"
+    "clean": "rimraf dist/*",
+    "deploy": "./node_modules/gh-pages-deploy/bin/gh-pages-deploy"
   },
   "devDependencies": {
     "babel-core": "^5.8.22",
@@ -33,6 +34,7 @@
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.3.0",
     "file-loader": "^0.8.4",
+    "gh-pages-deploy": "^0.3.0",
     "glob": "^5.0.15",
     "isparta-loader": "^1.0.0",
     "karma": "^0.13.9",
