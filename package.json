@@ -71,6 +71,10 @@
     "react-dom": "^0.14.0"
   },
   "gh-pages-deploy": {
-    "staticpath": "dist"
+    "staticpath": "dist",
+    "prep": [
+      "dist"
+    ],
+    "noprompt": false
   }
 }
