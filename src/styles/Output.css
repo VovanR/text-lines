@@ -1,0 +1,8 @@
+.output-component {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.output-component textarea {
+  background-color: #fbfbfb;
+}
