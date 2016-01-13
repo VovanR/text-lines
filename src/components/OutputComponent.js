@@ -19,11 +19,11 @@ class OutputComponent extends React.Component {
   render() {
     let text = this._getText();
     return (
-      <div className="output-component">
+      <div className='output-component'>
         <textarea
           readOnly
           value={text}
-          placeholder="Output"
+          placeholder='Output'
         />
         <Statistics text={text} />
       </div>

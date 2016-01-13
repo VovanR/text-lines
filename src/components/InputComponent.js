@@ -12,11 +12,11 @@ class InputComponent extends React.Component {
 
   render() {
     return (
-      <div className="input-component">
+      <div className='input-component'>
         <textarea
           onChange={this.handleChange.bind(this)}
           defaultValue={this.props.text}
-          placeholder="Input"
+          placeholder='Input'
         />
         <Statistics text={this.props.text} />
       </div>

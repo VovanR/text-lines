@@ -11,7 +11,7 @@ class StatisticsComponent extends React.Component {
 
   render() {
     return (
-      <div className="statistics-component">
+      <div className='statistics-component'>
         {this._calcLines(this.props.text)}
       </div>
     );
