@@ -9,9 +9,9 @@ You can include the configuration into your code like this:
 let react = require('react/addons');
 let config = require('config');
 class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    let currentAppEnv = config.appEnv;
-  }
+	constructor(props) {
+		super(props);
+		let currentAppEnv = config.appEnv;
+	}
 }
 ```

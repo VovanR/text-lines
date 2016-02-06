@@ -1,16 +1,18 @@
 .copyright-component {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  opacity: 0.4;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
 }
-.copyright-component a {
-  display: block;
-  font-size: 100%;
-  padding: 1em;
-  text-decoration: none;
-  color: #000;
+.copyright-component__link {
+    display: block;
+    font-size: 100%;
+    padding: 1em;
+    text-decoration: none;
+    color: #000;
 }
-.copyright-component span {
-  text-decoration: underline;
+.copyright-component__license {
+}
+.copyright-component__author {
+    text-decoration: underline;
 }

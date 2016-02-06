@@ -1,5 +1,3 @@
-'use strict';
-
 require('normalize.css');
 require('styles/App.css');
 

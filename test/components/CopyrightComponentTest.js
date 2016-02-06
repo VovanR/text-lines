@@ -10,13 +10,13 @@ import createComponent from 'helpers/shallowRenderHelper';
 import CopyrightComponent from 'components//CopyrightComponent.js';
 
 describe('CopyrightComponent', () => {
-    let component;
+	let component;
 
-    beforeEach(() => {
-      component = createComponent(CopyrightComponent);
-    });
+	beforeEach(() => {
+		component = createComponent(CopyrightComponent);
+	});
 
-    it('should have its component name as default className', () => {
-      expect(component.props.className).to.equal('copyright-component');
-    });
+	it('should have its component name as default className', () => {
+		expect(component.props.className).to.equal('copyright-component');
+	});
 });
