@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {sortBy, uniq} from 'lodash'
+import uniq from 'uniq'
 import Statistics from './StatisticsComponent';
 
 require('styles/Output.css');
@@ -9,7 +9,6 @@ require('styles/Output.css');
 class OutputComponent extends React.Component {
   _getText() {
     let out = this.props.text.trim().split('\n');
-    out = sortBy(out);
     out = uniq(out);
     out = out.join('\n');
 
