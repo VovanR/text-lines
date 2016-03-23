@@ -1,9 +1,10 @@
 .output-component {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
 .output-component textarea {
-  background-color: #fbfbfb;
+    background-color: #fbfbfb;
 }

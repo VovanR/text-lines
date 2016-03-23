@@ -4,6 +4,7 @@
     bottom: 0;
     opacity: 0.4;
 }
+
 .copyright-component__link {
     display: block;
     font-size: 100%;
@@ -11,8 +12,10 @@
     text-decoration: none;
     color: #000;
 }
+
 .copyright-component__license {
 }
+
 .copyright-component__author {
     text-decoration: underline;
 }

@@ -1,9 +1,10 @@
 .input-component {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
 .input-component textarea {
-  background-color: #fff;
+    background-color: #fff;
 }
