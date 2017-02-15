@@ -23,3 +23,10 @@ textarea {
 textarea:focus {
     border-color: #ff3304;
 }
+
+.copyright {
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    background-clip: padding-box;
+    z-index: 10;
+}

@@ -7,20 +7,22 @@ require('styles/Copyright.css');
 class CopyrightComponent extends React.Component {
 	render() {
 		return (
-			<div className="copyright-component">
-				<a
-					className="copyright-component__link"
-					href={`https://github.com/VovanR/${this.props.repoName}`}
-					target="_blank"
-					>
-					<span className="copyright-component__license">
-						MIT&nbsp;&copy;&nbsp;
-					</span>
-					<span className="copyright-component__author">
-						Vladimir Rodkin
-					</span>
-				</a>
-			</div>
+			<a
+				className="copyright"
+				href={`https://github.com/vovanr/${this.props.repoName}`}
+				target="_blank"
+				rel="noopener noreferrer"
+				>
+				<span className="copyright__license">
+					{'MIT ©'}
+				</span>
+
+				{' '}
+
+				<span className="copyright__author">
+					{'Vladimir Rodkin'}
+				</span>
+			</a>
 		);
 	}
 }
