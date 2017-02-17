@@ -12,9 +12,8 @@
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "start": "NODE_ENV=development webpack --watch",
-    "deploy": "gh-pages-deploy",
     "test": "eslint app/**/*.{js,jsx} webpack.config.js",
-    "precommit": "npm run lint-staged",
+    "precommit": "npm run lint-staged && npm run build && git add dist",
     "lint-staged": "lint-staged"
   },
   "dependencies": {},
@@ -42,13 +41,7 @@
     "webpack": "^2.2.1"
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint"
-  },
-  "gh-pages-deploy": {
-    "staticpath": "dist",
-    "prep": [
-      "build"
-    ],
-    "noprompt": false
+    "app/**/*.{js,jsx}": "eslint",
+    "webpack.config.js": "eslint"
   }
 }
