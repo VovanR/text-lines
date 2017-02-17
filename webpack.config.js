@@ -45,18 +45,25 @@ module.exports = {
 			css: path.resolve(__dirname, 'app/css')
 		}
 	},
-	plugins: [
-		new webpack.DefinePlugin({
+	plugins: (() => {
+		const plugins = [];
+		plugins.push(new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(isDev ? ENV.development : ENV.production)
-		}),
-		new UglifyJSPlugin(),
-		new webpack.LoaderOptionsPlugin({
-			minimize: true
-		}),
-		new ExtractTextPlugin({
+		}));
+
+		if (!isDev) {
+			plugins.push(new UglifyJSPlugin());
+			plugins.push(new webpack.LoaderOptionsPlugin({
+				minimize: true
+			}));
+		}
+
+		plugins.push(new ExtractTextPlugin({
 			filename: '[name].css',
 			allChunks: true
-		})
-	],
+		}));
+
+		return plugins;
+	})(),
 	devtool: isDev && 'cheap-module-source-map'
 };

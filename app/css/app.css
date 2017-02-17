@@ -26,6 +26,24 @@ textarea:focus {
     border-color: #ff3304;
 }
 
+button {
+	font-size: 100%;
+	font-family: monospace;
+	box-sizing: border-box;
+	border: none;
+	background-image: none;
+	background-color: #fff;
+	border-radius: 0;
+	position: absolute;
+	top: 27px;
+	right: 2px;
+	padding: 5px 10px;
+}
+
+button:active {
+	background-color: #2ecc71;
+}
+
 .copyright {
     border-right: 2px solid transparent;
     border-bottom: 2px solid transparent;

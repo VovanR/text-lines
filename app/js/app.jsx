@@ -1,3 +1,5 @@
+/* global localStorage */
+
 'use strict';
 
 import React from 'react';
@@ -14,10 +16,28 @@ class App extends React.Component {
 		this.state = {text: ''};
 
 		this.handleChange = this.handleChange.bind(this);
+		this.handleClickClear = this.handleClickClear.bind(this);
+	}
+
+	componentWillMount() {
+		const text = localStorage.getItem('text');
+		if (text) {
+			this.setState({text});
+		}
+	}
+
+	_setText(text) {
+		this.setState({text}, () => {
+			localStorage.setItem('text', text);
+		});
 	}
 
 	handleChange(text) {
-		this.setState({text});
+		this._setText(text);
+	}
+
+	handleClickClear() {
+		this._setText('');
 	}
 
 	render() {
@@ -33,6 +53,14 @@ class App extends React.Component {
 					/>
 
 				<Output text={text}/>
+
+				<button
+					onClick={this.handleClickClear}
+					type="button"
+					title="Clear"
+					>
+					{'×'}
+				</button>
 
 				<Copyright
 					author="Vladimir Rodkin"

@@ -25,7 +25,7 @@ class Input extends React.Component {
 			<div className="input">
 				<textarea
 					onChange={this.handleChange}
-					defaultValue={text}
+					value={text}
 					placeholder="Input"
 					autoFocus="on"
 					/>
