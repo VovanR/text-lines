@@ -1,4 +1,4 @@
-.index {
+.app {
     display: flex;
     height: 100%;
     justify-content: center;
@@ -6,6 +6,7 @@
     position: absolute;
     text-align: center;
     width: 100%;
+    box-sizing: border-box;
 }
 
 textarea {
@@ -18,6 +19,7 @@ textarea {
     border: 2px solid #fff;
     transition: border ease 0.15s;
     outline: none;
+	margin: 0;
 }
 
 textarea:focus {

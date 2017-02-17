@@ -1,11 +1,11 @@
-.input-component {
+.input {
     width: 50%;
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-.input-component textarea {
+.input textarea {
     background-color: #fff;
     font-family: monospace;
 }

@@ -1,48 +1,62 @@
-'use strict';
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-var path = require('path');
-var args = require('minimist')(process.argv.slice(2));
-
-// List of allowed environments
-var allowedEnvs = ['dev', 'dist', 'test'];
-
-// Set the correct environment
-var env;
-if(args._.length > 0 && args._.indexOf('start') !== -1) {
-  env = 'test';
-} else if (args.env) {
-  env = args.env;
-} else {
-  env = 'dev';
-}
-process.env.REACT_WEBPACK_ENV = env;
-
-// Get available configurations
-var configs = {
-  base: require(path.join(__dirname, 'cfg/base')),
-  dev: require(path.join(__dirname, 'cfg/dev')),
-  dist: require(path.join(__dirname, 'cfg/dist')),
-  test: require(path.join(__dirname, 'cfg/test'))
+const ENV = {
+	production: 'production',
+	development: 'development'
 };
 
-/**
- * Get an allowed environment
- * @param  {String}  env
- * @return {String}
- */
-function getValidEnv(env) {
-  var isValid = env && env.length > 0 && allowedEnvs.indexOf(env) !== -1;
-  return isValid ? env : 'dev';
-}
+const isDev = process.env.NODE_ENV !== ENV.production;
 
-/**
- * Build the webpack configuration
- * @param  {String} env Environment to use
- * @return {Object} Webpack config
- */
-function buildConfig(env) {
-  var usedEnv = getValidEnv(env);
-  return configs[usedEnv];
-}
-
-module.exports = buildConfig(env);
+module.exports = {
+	entry: {
+		app: './app/index.js'
+	},
+	output: {
+		path: './dist',
+		filename: '[name].js',
+		publicPath: ''
+	},
+	module: {
+		rules: [
+			{
+				test: /\.jsx$/,
+				use: 'babel-loader',
+				exclude: /node_modules/
+			},
+			{
+				test: /\.css$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: {
+						loader: 'css-loader',
+						options: {
+							sourceMap: true
+						}
+					}
+				})
+			}
+		]
+	},
+	resolve: {
+		alias: {
+			css: path.resolve(__dirname, 'app/css')
+		}
+	},
+	plugins: [
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify(isDev ? ENV.development : ENV.production)
+		}),
+		new UglifyJSPlugin(),
+		new webpack.LoaderOptionsPlugin({
+			minimize: true
+		}),
+		new ExtractTextPlugin({
+			filename: '[name].css',
+			allChunks: true
+		})
+	],
+	devtool: isDev && 'cheap-module-source-map'
+};
