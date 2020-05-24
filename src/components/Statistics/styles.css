@@ -1,0 +1,9 @@
+.statistics {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  font-family: monospace;
+  cursor: default;
+}
