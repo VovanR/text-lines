@@ -3,45 +3,41 @@
   "version": "0.0.1",
   "description": "Sort and remove duplicated text lines",
   "license": "MIT",
+  "private": true,
   "repository": "VovanR/text-lines",
-  "author": {
-    "name": "Vladimir Rodkin",
-    "email": "mail@vovanr.com",
-    "url": "https://github.com/VovanR"
-  },
+  "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=development webpack --watch",
-    "test": "eslint app/**/*.{js,jsx} webpack.config.js",
-    "precommit": "npm run lint-staged && npm run build && git add dist",
-    "lint-staged": "lint-staged"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
-    "babel-preset-modern-browsers": "^8.0.0",
-    "babel-preset-react": "^6.23.0",
-    "babel-register": "^6.23.0",
-    "css-loader": "^0.26.1",
-    "eslint": "^3.15.0",
-    "eslint-config-xo": "^0.17.0",
-    "eslint-config-xo-react": "^0.10.0",
-    "eslint-loader": "^1.6.1",
-    "eslint-plugin-react": "^6.10.0",
-    "eslint-plugin-xo": "^1.0.0",
-    "extract-text-webpack-plugin": "^2.0.0-beta",
-    "husky": "^0.13.1",
-    "lint-staged": "^3.3.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "style-loader": "^0.13.1",
-    "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony",
-    "uglifyjs-webpack-plugin": "^0.1.5",
-    "webpack": "^2.2.1"
+    "gh-pages": "^2.2.0"
   },
-  "lint-staged": {
-    "app/**/*.{js,jsx}": "eslint",
-    "webpack.config.js": "eslint"
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
