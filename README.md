@@ -1,7 +1,7 @@
 # text-lines
 
 <img align="right" width="120" height="120"
-     src="./logo.svg" alt="Text Lines logo">
+     src="./public/logo.svg" alt="Text Lines logo">
 
 > Sort and remove duplicated text lines
 

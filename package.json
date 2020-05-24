@@ -6,6 +6,7 @@
   "private": true,
   "repository": "VovanR/text-lines",
   "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
+  "homepage": "https://vovanr.com/text-lines",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
